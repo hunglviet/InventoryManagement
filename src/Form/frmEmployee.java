@@ -51,30 +51,32 @@ public class frmEmployee extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         Granduation = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         jLabel15 = new javax.swing.JLabel();
         dateChooserCombo2 = new datechooser.beans.DateChooserCombo();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<String>();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<String>();
         jLabel19 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         panelDesc = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         panelNavigator = new javax.swing.JPanel();
+        panelNavigator1 = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
         btnSearch = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
         panelTable = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -127,7 +129,7 @@ public class frmEmployee extends javax.swing.JFrame {
 
         jLabel12.setText("Email");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout GeneralLayout = new javax.swing.GroupLayout(General);
         General.setLayout(GeneralLayout);
@@ -208,12 +210,12 @@ public class frmEmployee extends javax.swing.JFrame {
 
         Granduation.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Other info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         Granduation.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 GranduationAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         Granduation.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -232,15 +234,15 @@ public class frmEmployee extends javax.swing.JFrame {
 
         jLabel16.setText("Degree");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel17.setText("Department");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel18.setText("User level");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel19.setText("User ID");
 
@@ -346,7 +348,7 @@ public class frmEmployee extends javax.swing.JFrame {
             .addGroup(panelEntryLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelEntryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Granduation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(Granduation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(General, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
@@ -354,22 +356,23 @@ public class frmEmployee extends javax.swing.JFrame {
 
         panelNavigator.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Navigator.setLayout(new java.awt.GridLayout(1, 0));
+        panelNavigator1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Lang/Bundle"); // NOI18N
-        btnSearch.setText(bundle.getString("SEARCH")); // NOI18N
+        Navigator.setLayout(new java.awt.GridLayout());
+
+        btnSearch.setText("Search");
         Navigator.add(btnSearch);
 
-        btnNew.setText(bundle.getString("NEW")); // NOI18N
+        btnNew.setText("New");
         Navigator.add(btnNew);
 
-        btnRefresh.setText(bundle.getString("REFRESH")); // NOI18N
+        btnRefresh.setText("Refresh");
         Navigator.add(btnRefresh);
 
-        btnSave.setText(bundle.getString("SAVE")); // NOI18N
+        btnSave.setText("Save");
         Navigator.add(btnSave);
 
-        btnClose.setText(bundle.getString("CLOSE")); // NOI18N
+        btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -377,21 +380,35 @@ public class frmEmployee extends javax.swing.JFrame {
         });
         Navigator.add(btnClose);
 
-        javax.swing.GroupLayout panelNavigatorLayout = new javax.swing.GroupLayout(panelNavigator);
-        panelNavigator.setLayout(panelNavigatorLayout);
-        panelNavigatorLayout.setHorizontalGroup(
-            panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigatorLayout.createSequentialGroup()
+        btnHelp.setText("Help");
+        Navigator.add(btnHelp);
+
+        javax.swing.GroupLayout panelNavigator1Layout = new javax.swing.GroupLayout(panelNavigator1);
+        panelNavigator1.setLayout(panelNavigator1Layout);
+        panelNavigator1Layout.setHorizontalGroup(
+            panelNavigator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigator1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelNavigatorLayout.setVerticalGroup(
-            panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigatorLayout.createSequentialGroup()
+        panelNavigator1Layout.setVerticalGroup(
+            panelNavigator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigator1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        javax.swing.GroupLayout panelNavigatorLayout = new javax.swing.GroupLayout(panelNavigator);
+        panelNavigator.setLayout(panelNavigatorLayout);
+        panelNavigatorLayout.setHorizontalGroup(
+            panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelNavigator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelNavigatorLayout.setVerticalGroup(
+            panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelNavigator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jScrollPane2.setViewportView(jTable2);
@@ -404,7 +421,7 @@ public class frmEmployee extends javax.swing.JFrame {
         );
         panelTableLayout.setVerticalGroup(
             panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
 
         panelFooter.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -417,7 +434,7 @@ public class frmEmployee extends javax.swing.JFrame {
         );
         panelFooterLayout.setVerticalGroup(
             panelFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 36, Short.MAX_VALUE)
+            .addGap(0, 34, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -448,11 +465,6 @@ public class frmEmployee extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-    }//GEN-LAST:event_btnCloseActionPerformed
-
     private void GranduationComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_GranduationComponentShown
         // TODO add your handling code here:
         
@@ -463,6 +475,11 @@ public class frmEmployee extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_GranduationAncestorAdded
+
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -504,6 +521,7 @@ public class frmEmployee extends javax.swing.JFrame {
     private javax.swing.JPanel Granduation;
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave;
@@ -551,6 +569,7 @@ public class frmEmployee extends javax.swing.JFrame {
     private javax.swing.JPanel panelFooter;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelNavigator;
+    private javax.swing.JPanel panelNavigator1;
     private javax.swing.JPanel panelTable;
     // End of variables declaration//GEN-END:variables
 }

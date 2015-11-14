@@ -30,12 +30,14 @@ public class frmCategory extends javax.swing.JFrame {
         panelHeader = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         panelNavigator = new javax.swing.JPanel();
+        panelNavigator1 = new javax.swing.JPanel();
         Navigator = new javax.swing.JPanel();
         btnSearch = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
         panelFooter = new javax.swing.JPanel();
         panelTable = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -71,22 +73,23 @@ public class frmCategory extends javax.swing.JFrame {
 
         panelNavigator.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Navigator.setLayout(new java.awt.GridLayout(1, 0));
+        panelNavigator1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("Lang/Bundle"); // NOI18N
-        btnSearch.setText(bundle.getString("SEARCH")); // NOI18N
+        Navigator.setLayout(new java.awt.GridLayout());
+
+        btnSearch.setText("Search");
         Navigator.add(btnSearch);
 
-        btnNew.setText(bundle.getString("NEW")); // NOI18N
+        btnNew.setText("New");
         Navigator.add(btnNew);
 
-        btnRefresh.setText(bundle.getString("REFRESH")); // NOI18N
+        btnRefresh.setText("Refresh");
         Navigator.add(btnRefresh);
 
-        btnSave.setText(bundle.getString("SAVE")); // NOI18N
+        btnSave.setText("Save");
         Navigator.add(btnSave);
 
-        btnClose.setText(bundle.getString("CLOSE")); // NOI18N
+        btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -94,21 +97,35 @@ public class frmCategory extends javax.swing.JFrame {
         });
         Navigator.add(btnClose);
 
+        btnHelp.setText("Help");
+        Navigator.add(btnHelp);
+
+        javax.swing.GroupLayout panelNavigator1Layout = new javax.swing.GroupLayout(panelNavigator1);
+        panelNavigator1.setLayout(panelNavigator1Layout);
+        panelNavigator1Layout.setHorizontalGroup(
+            panelNavigator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigator1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelNavigator1Layout.setVerticalGroup(
+            panelNavigator1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigator1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout panelNavigatorLayout = new javax.swing.GroupLayout(panelNavigator);
         panelNavigator.setLayout(panelNavigatorLayout);
         panelNavigatorLayout.setHorizontalGroup(
             panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigatorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(panelNavigator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelNavigatorLayout.setVerticalGroup(
             panelNavigatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNavigatorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Navigator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(panelNavigator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         panelFooter.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -142,7 +159,7 @@ public class frmCategory extends javax.swing.JFrame {
         );
         panelTableLayout.setVerticalGroup(
             panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
 
         jLabel2.setText("Category name");
@@ -218,14 +235,14 @@ public class frmCategory extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
         setVisible(false);
     }//GEN-LAST:event_btnCloseActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,6 +282,7 @@ public class frmCategory extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Navigator;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSave;
@@ -280,6 +298,7 @@ public class frmCategory extends javax.swing.JFrame {
     private javax.swing.JPanel panelFooter;
     private javax.swing.JPanel panelHeader;
     private javax.swing.JPanel panelNavigator;
+    private javax.swing.JPanel panelNavigator1;
     private javax.swing.JPanel panelTable;
     // End of variables declaration//GEN-END:variables
 }
